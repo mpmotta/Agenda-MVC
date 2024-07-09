@@ -78,22 +78,22 @@ class Pessoa extends Conexao {
         }
     }
 
-    public function inserir($pessoa) {
+    public function inserir(Pessoa $pessoa) {
         $sql = "INSERT INTO $this->tabela (nome, fone, email) VALUES (:nome, :fone, :email)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':nome', $pessoa['nome'], PDO::PARAM_STR);
-        $stmt->bindParam(':fone', $pessoa['fone'], PDO::PARAM_STR);
-        $stmt->bindParam(':email', $pessoa['email'], PDO::PARAM_STR);
+        $stmt->bindParam(':nome', $pessoa->getNome(), PDO::PARAM_STR);
+        $stmt->bindParam(':fone', $pessoa->getFone(), PDO::PARAM_STR);
+        $stmt->bindParam(':email', $pessoa->getEmail(), PDO::PARAM_STR);
         $stmt->execute();
     }
 
-    public function editar($pessoa, $id) {
+    public function editar(Pessoa $pessoa, $id) {
         $sql = "UPDATE $this->tabela SET avatar = :avatar, nome = :nome, fone = :fone, email = :email WHERE id = :id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':avatar', $pessoa['avatar'], PDO::PARAM_STR);
-        $stmt->bindParam(':nome', $pessoa['nome'], PDO::PARAM_STR);
-        $stmt->bindParam(':fone', $pessoa['fone'], PDO::PARAM_STR);
-        $stmt->bindParam(':email', $pessoa['email'], PDO::PARAM_STR);
+        $stmt->bindParam(':avatar', $pessoa->getAvatar(), PDO::PARAM_STR);
+        $stmt->bindParam(':nome', $pessoa->getNome(), PDO::PARAM_STR);
+        $stmt->bindParam(':fone', $pessoa->getFone(), PDO::PARAM_STR);
+        $stmt->bindParam(':email', $pessoa->getEmail(), PDO::PARAM_STR);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
