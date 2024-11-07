@@ -79,12 +79,35 @@ class Pessoa extends Conexao {
     }
 
     public function inserir(Pessoa $pessoa) {
-        $sql = "INSERT INTO $this->tabela (nome, fone, email) VALUES (:nome, :fone, :email)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':nome', $pessoa->getNome(), PDO::PARAM_STR);
-        $stmt->bindParam(':fone', $pessoa->getFone(), PDO::PARAM_STR);
-        $stmt->bindParam(':email', $pessoa->getEmail(), PDO::PARAM_STR);
-        $stmt->execute();
+        try {
+            $sql = "INSERT INTO $this->tabela (nome, fone, email) VALUES (:nome, :fone, :email)";
+            $stmt = $this->conn->prepare($sql);
+            
+            $stmt->bindParam(':nome', $pessoa->getNome(), PDO::PARAM_STR);
+            $stmt->bindParam(':fone', $pessoa->getFone(), PDO::PARAM_STR);
+            $stmt->bindParam(':email', $pessoa->getEmail(), PDO::PARAM_STR);
+            
+            // Tenta executar a inserção
+            $stmt->execute();
+            
+            // Se a inserção for bem-sucedida
+            if ($stmt->rowCount() > 0) {
+                echo "Cadastro realizado com sucesso!";
+            } else {
+                header('Location: ../view/agenda.php?cadastro=erro');
+                exit();
+            }
+        } catch (PDOException $e) {
+            // Se ocorrer um erro de duplicidade
+            if ($e->getCode() == 23000) { // Código de erro para violação de integridade
+                header('Location: ../view/agenda.php?cadastro=erro');
+                exit();
+            } else {
+                // Para outros erros, também redireciona para a página de erro
+                header('Location: ../view/agenda.php?cadastro=erro');
+                exit();
+            }
+        }
     }
 
     public function editar(Pessoa $pessoa, $id) {

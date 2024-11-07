@@ -69,6 +69,10 @@
             echo  "<script src='js/cadastro.js'></script>";
         }
 
+        if(isset($_GET['cadastro']) && $_GET['cadastro'] == 'erro'){
+            echo  "<script src='js/cadastro-erro.js'></script>";
+        }
+
         if(isset($_GET['edit']) && $_GET['edit'] == 'ok'){
             echo  "<script src='js/editado.js'></script>";
         }
