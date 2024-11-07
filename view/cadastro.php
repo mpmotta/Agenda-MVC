@@ -11,20 +11,24 @@
         <h2 class="text-center p-3">Cadastro na Agenda</h2>
         <form method="post" action="../controller/pessoaController.php?action=cadastrarPessoa">
             <div class="m-3">
-                <input type="text" name="nome" class="form-control"
+                <input type="text" name="nome" 
+                id="nome" class="form-control"
                 placeholder="Nome">
             </div>
             <div class="m-3">
-                <input type="tel" name="fone" class="form-control"
+                <input type="tel" name="fone"
+                id="fone" class="form-control"
                 placeholder="Telefone">
             </div> 
             <div class="m-3">   
-                <input type="email" name="email" class="form-control"
+                <input type="email" name="email"
+                id="email" class="form-control"
                 placeholder="Email">
             </div>
             <div class="m-3">   
             <a href="agenda.php" class="btn btn-secondary mb-3">Voltar</a> 
-                <button type="submit" class="btn btn-primary mb-3">
+                <button type="submit"
+                id="submit" class="btn btn-primary mb-3">
                     Cadastrar
                 </button>
             </div>    

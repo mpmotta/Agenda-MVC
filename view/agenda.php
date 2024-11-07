@@ -41,9 +41,9 @@
                             <td>$fone</td>
                             <td>$email</td>
                             
-                            <td><a class='btn btn-success' href='editar.php?id=$id'>Editar</a></td>
+                            <td><a class='btn btn-success' id='editar$id' href='editar.php?id=$id'>Editar</a></td>
 
-                            <td><a class='btn btn-danger' onclick='confirmDelete($id)' href='#'>Excluir</a></td>
+                            <td><a class='btn btn-danger' id='excluir$id' onclick='confirmDelete($id)' href='#'>Excluir</a></td>
 
                         </tr>    
                         ";
@@ -51,7 +51,8 @@
                 ?>
                 <tr>
                     <td colspan="5">
-                        <a class="btn btn-primary" href="cadastro.php">CADASTRAR</a>
+                        <a class="btn btn-primary"
+                        id="cadastrar" href="cadastro.php">CADASTRAR</a>
                     </td>
                     <td>
                         <a class="btn btn-dark" onclick="confirmSair()"
@@ -90,8 +91,8 @@
         showCancelButton: true,
         confirmButtonColor: "#c00",
         cancelButtonColor: "#aaa",
-        cancelButtonText: "Cancelar",
-        confirmButtonText: "Sim, apagar!"
+        cancelButtonText: "Cancelar!",
+        confirmButtonText: "Apagar!"
         }).then((result) => {
         if (result.isConfirmed) {
             window.location.href = `../controller/pessoaController.php?id=${id}&action=excluirPessoa`;
@@ -107,7 +108,7 @@
         showCancelButton: true,
         confirmButtonColor: "#060",
         cancelButtonColor: "#aaa",
-        cancelButtonText: "Cancelar",
+        cancelButtonText: "Não Deslogar!",
         confirmButtonText: "Deslogar!"
         }).then((result) => {
         if (result.isConfirmed) {

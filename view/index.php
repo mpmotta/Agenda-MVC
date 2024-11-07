@@ -12,15 +12,17 @@
         <h2 class="text-center p-3">Página de Login</h2>
         <form method="post" action="../controller/usuarioController.php?action=logar">
             <div class="m-3">
-                <input required type="text" name="usuario" class="form-control"
+                <input required type="text" name="usuario" 
+                id="usuario" class="form-control"
                 placeholder="Usuário">
             </div>
             <div class="m-3">
-                <input required type="password" name="senha" class="form-control"
+                <input required type="password" name="senha" 
+                id="senha" class="form-control"
                 placeholder="Senha">
             </div> 
             <div class="m-3">   
-            <button type="submit" class="btn btn-primary mb-3">
+            <button type="submit" id="submit" class="btn btn-primary mb-3">
                     Logar
                 </button>
             </div>    

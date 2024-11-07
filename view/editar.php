@@ -36,20 +36,20 @@ $consulta = $pessoa->consultaID($id);
             <div class="m-3">
                 <input type="hidden" name="meuid" value="<?php echo $id?>">
                 <input type="hidden" name="meuavatar" value="<?php echo $pessoa->getAvatar() ?>">
-                <input type="text" name="nome" class="form-control"
+                <input type="text" name="nome" id="nome" class="form-control"
                 value="<?php echo $pessoa->getNome() ?>">
             </div>
             <div class="m-3">
-                <input type="tel" name="fone" class="form-control"
+                <input type="tel" name="fone" id="fone" class="form-control"
                 value="<?php echo $pessoa->getFone() ?>">
             </div> 
             <div class="m-3">   
-                <input type="email" name="email" class="form-control"
+                <input type="email" name="email" id="email" class="form-control"
                 value="<?php echo $pessoa->getEmail() ?>">
             </div>
             <div class="m-3">    
-            <a href="agenda.php" class="btn btn-secondary mb-3">Voltar</a>
-                <button type="submit" class="btn btn-primary mb-3">
+            <a href="agenda.php" id="voltar" class="btn btn-secondary mb-3">Voltar</a>
+            <button type="submit" id="alterar" class="btn btn-primary mb-3">
                     Alterar
                 </button>
             </div>    
