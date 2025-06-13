@@ -1,21 +1,27 @@
 <?php
-date_default_timezone_set('America/Sao_paulo');
+date_default_timezone_set('America/Sao_Paulo');
 $agora = date('d-m-Y-h-i-s');
 
-$arquivo = $_FILES['avatar']['tmp_name'];
-$foto = $_FILES['avatar']['name'];
+if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
+    $arquivo = $_FILES['avatar']['tmp_name'];
+    $foto = $_FILES['avatar']['name'];
 
-//pega a extensao
-$extensao = pathinfo($foto, PATHINFO_EXTENSION);
+    $extensao = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
+    $extensoesPermitidas = ['jpg', 'jpeg', 'png', 'gif'];
 
-//muda o nome
-$tmp_nome = md5($foto . $agora);
-$avatar = $tmp_nome . "." . $extensao;
+    if (in_array($extensao, $extensoesPermitidas)) {
+        $tmp_nome = md5($foto . $agora);
+        $avatar = $tmp_nome . "." . $extensao;
+        $destino = '../view/img/avatar/' . $avatar;
 
-//novo destino
-$destino = '../view/img/avatar/'. $avatar;
-
-move_uploaded_file($arquivo, $destino);
-
-
-?>
+        if (move_uploaded_file($arquivo, $destino)) {
+            echo $avatar;
+        } else {
+            echo "Erro ao mover o arquivo para o destino.";
+        }
+    } else {
+        echo "Extensão de arquivo não permitida.";
+    }
+} else {
+    echo "Nenhum arquivo enviado ou erro no upload.";
+}
