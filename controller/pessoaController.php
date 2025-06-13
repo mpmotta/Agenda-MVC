@@ -56,10 +56,23 @@ class pessoaController {
         if (isset($_GET['action']) && $_GET['action'] == 'editarPessoa') {
             $pessoa = new Pessoa();
             $pessoa->setId($_POST['meuid']);
-            $pessoa->setAvatar($_POST['meuavatar']);
             $pessoa->setNome($_POST['nome']);
             $pessoa->setFone($_POST['fone']);
             $pessoa->setEmail($_POST['email']);
+
+            $avatar = $_POST['meuavatar']; 
+
+            if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] == 0) {
+                $arquivo = $_FILES['avatar']['tmp_name'];
+                $foto = $_FILES['avatar']['name'];
+                $extensao = pathinfo($foto, PATHINFO_EXTENSION);
+                $tmp_nome = md5($foto . date('d-m-Y-h-i-s'));
+                $avatar = $tmp_nome . "." . $extensao;
+                $destino = '../view/img/avatar/' . $avatar;
+                move_uploaded_file($arquivo, $destino);
+				$pessoa->setAvatar($avatar); 
+            }
+
             $this->editar($pessoa);
         }
         if (isset($_GET['action']) && $_GET['action'] == 'excluirPessoa') {
