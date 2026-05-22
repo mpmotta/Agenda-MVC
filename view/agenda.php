@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Agenda</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body class="bg-secondary">
     <div class="container bg-light p-0">
@@ -20,8 +21,8 @@
                 <th>NOME</th>
                 <th>FONE</th>
                 <th>EMAIL</th>
-                <th>EDITAR</th>
-                <th>EXCLUIR</th>
+                <th class='text-center'>EDITAR</th>
+                <th class='text-center'>EXCLUIR</th>
             </tr>    
             <?php
                     require_once('../controller/pessoaController.php');
@@ -41,9 +42,9 @@
                             <td>$fone</td>
                             <td>$email</td>
                             
-                            <td><a class='btn btn-success' id='editar$id' href='editar.php?id=$id'>Editar</a></td>
-
-                            <td><a class='btn btn-danger' id='excluir$id' onclick='confirmDelete($id)' href='#'>Excluir</a></td>
+                            <td class='text-center'><a class='btn btn-success' id='editar$id' href='editar.php?id=$id'><i class='fas fa-edit'></i></a></td>
+<
+                            <td class='text-center'><a class='btn btn-danger' id='excluir$id' onclick='confirmDelete($id)' href='#'><i class='fas fa-trash'></i></a></td>
 
                         </tr>    
                         ";
