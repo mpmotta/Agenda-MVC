@@ -51,9 +51,13 @@
                     }
                 ?>
                 <tr>
-                    <td colspan="5">
+                    <td>
                         <a class="btn btn-primary"
                         id="cadastrar" href="cadastro.php">CADASTRAR</a>
+                    </td>
+                    <td colspan="4">
+                        <a class="btn btn-warning"
+                        id="cadastrar" href="editar.php">TROCAR SENHA</a>
                     </td>
                     <td>
                         <a class="btn btn-dark" onclick="confirmSair()"
