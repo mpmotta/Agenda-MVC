@@ -27,10 +27,8 @@
                 </button>
             </div>    
         </form>
-        <div class="m-3">
         <a href="../controller/esqueciSenha.php"
-        class="form-control btn btn-warning mb-3">Esqueci a Senha</a>
-        </div>
+        class="form-control btn btn-warning mb-3 mx-2">Esqueci a Senha</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <?php
