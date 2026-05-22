@@ -21,8 +21,8 @@
                 <th>NOME</th>
                 <th>FONE</th>
                 <th>EMAIL</th>
-                <th>EDITAR</th>
-                <th>EXCLUIR</th>
+                <th class='text-center'>EDITAR</th>
+                <th class='text-center'>EXCLUIR</th>
             </tr>    
             <?php
                     require_once('../controller/pessoaController.php');
@@ -42,9 +42,9 @@
                             <td>$fone</td>
                             <td>$email</td>
                             
-                            <td><a class='btn btn-success' id='editar$id' href='editar.php?id=$id'><i class='fas fa-edit'></i></a></td>
+                            <td class='text-center'><a class='btn btn-success' id='editar$id' href='editar.php?id=$id'><i class='fas fa-edit'></i></a></td>
 <
-                            <td><a class='btn btn-danger' id='excluir$id' onclick='confirmDelete($id)' href='#'><i class='fas fa-trash'></i></a></td>
+                            <td class='text-center'><a class='btn btn-danger' id='excluir$id' onclick='confirmDelete($id)' href='#'><i class='fas fa-trash'></i></a></td>
 
                         </tr>    
                         ";
