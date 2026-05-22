@@ -22,10 +22,10 @@
                 placeholder="Senha">
             </div> 
             <div class="m-3">   
-            <button type="submit" id="submit" class="btn btn-primary mb-3">
+            <button type="submit" id="submit" class="form-control btn btn-primary mb-3">
                     Logar
                     
-                </button>git 
+                </button>
             </div>    
         </form>
         <div class="m-3">
