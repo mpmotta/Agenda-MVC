@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-secondary">
-    <div class="container bg-light p-0" style="width:400px; margin: auto">
+    <div class="container bg-light p-0" style="width:400px; margin: 80px auto">
         <h2 class="text-center p-3">Cadastro na Agenda</h2>
         <form method="post" action="../controller/pessoaController.php?action=cadastrarPessoa">
             <div class="m-3">
