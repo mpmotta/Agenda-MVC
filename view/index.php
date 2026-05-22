@@ -8,7 +8,7 @@
 
 </head>
 <body class="bg-secondary">
-    <div class="container bg-light p-0" style="width:400px; margin: auto">
+    <div class="container bg-light p-0" style="width:400px; margin: 80px auto">
         <h1 class="text-center">AGENDA</h1>
         <h2 class="text-center p-3">Página de Login</h2>
         <form method="post" action="../controller/usuarioController.php?action=logar">
