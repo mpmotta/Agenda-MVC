@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-secondary">
-    <div class="container bg-light p-0">
+    <div class="container bg-light p-0" style="margin: 80px auto">
     <h1 class="bg-info-subtle text-center p-5">Minha Agenda</h1>
     <section class="p-5">
         <table class="table table-striped">
