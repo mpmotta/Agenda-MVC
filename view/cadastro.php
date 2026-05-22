@@ -26,11 +26,11 @@
                 placeholder="Email">
             </div>
             <div class="m-3">   
-            <a href="agenda.php" class="btn btn-secondary mb-3">Voltar</a> 
                 <button type="submit"
-                id="submit" class="btn btn-primary mb-3">
+                id="submit" class="form-control btn btn-primary mb-3">
                     Cadastrar
                 </button>
+                <a href="agenda.php" class="btn btn-secondary mb-3">Voltar</a>
             </div>    
         </form>
     </div>
